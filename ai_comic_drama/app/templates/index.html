@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 漫剧自动化演示</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI 漫剧自动化</h1>
+        <p class="subtitle">输入一个故事文本，一键触发文案创作、分镜设计、图片生成、运镜规划和视频生成的全流程演示。</p>
+
+        <div class="form-section">
+            <label for="title">故事标题（可选）</label>
+            <input id="title" type="text" placeholder="例如：山里的奇遇">
+
+            <label for="content">故事内容</label>
+            <textarea id="content" rows="10" placeholder="在这里输入你的故事大纲或故事正文"></textarea>
+
+            <button id="submit-btn">开始生成漫剧视频</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div id="result" class="result" style="display: none;">
+            <h2>生成结果</h2>
+            <p><strong>任务 ID：</strong><span id="task-id"></span></p>
+            <p><strong>任务状态：</strong><span id="task-status"></span></p>
+            <p><strong>视频地址：</strong><span id="video-url"></span></p>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
+

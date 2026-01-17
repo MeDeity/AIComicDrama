@@ -28,6 +28,7 @@ uvicorn ai_comic_drama.app.main:app --reload
 启动成功后，可以访问：
 
 - 文档页面（Swagger）：`http://127.0.0.1:8000/docs`
+- 可视化页面（输入故事文本、一键触发全流程）：`http://127.0.0.1:8000/`
 
 ### 3. 接口快速体验
 
@@ -45,13 +46,14 @@ uvicorn ai_comic_drama.app.main:app --reload
    }
    ```
 
-   - 响应示例（当前为占位实现，任务状态固定为 pending）：
+   - 响应示例（当前为占位实现，任务会同步返回成功状态与视频地址占位）：
 
    ```json
    {
      "task_id": "task-123456789",
-     "status": "pending",
-     "message": null
+     "status": "success",
+     "message": null,
+     "video_url": "/videos/generated_video.mp4"
    }
    ```
 
@@ -60,13 +62,14 @@ uvicorn ai_comic_drama.app.main:app --reload
    - 地址：`http://127.0.0.1:8000/api/v1/story/{task_id}`
    - 示例：`http://127.0.0.1:8000/api/v1/story/task-123456789`
 
-   - 响应示例：
+   - 响应示例（与创建时保持一致）：
 
    ```json
    {
      "task_id": "task-123456789",
-     "status": "pending",
-     "message": null
+     "status": "success",
+     "message": null,
+     "video_url": "/videos/generated_video.mp4"
    }
    ```
 

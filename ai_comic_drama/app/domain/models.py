@@ -45,9 +45,31 @@ class Script:
 
 
 @dataclass
+class CharacterInShot:
+    name: str
+    position: Optional[str] = None
+    pose: Optional[str] = None
+    expression: Optional[str] = None
+
+
+@dataclass
+class Shot:
+    id: str
+    scene_id: str
+    beat_id: str
+    shot_type: str = "medium"
+    camera_angle: Optional[str] = None
+    composition: Optional[str] = None
+    description: Optional[str] = None
+    prompt: Optional[str] = None
+    negative_prompt: Optional[str] = None
+    characters: List[CharacterInShot] = field(default_factory=list)
+
+
+@dataclass
 class StoryTask:
     id: str
     story_title: Optional[str] = None
     status: str = "pending"
     message: Optional[str] = None
-
+    video_url: Optional[str] = None

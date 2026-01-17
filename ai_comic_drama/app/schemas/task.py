@@ -10,4 +10,4 @@ class TaskStatusResponse(BaseModel):
     task_id: str
     status: TaskStatus
     message: Optional[str] = None
-
+    video_url: Optional[str] = None
